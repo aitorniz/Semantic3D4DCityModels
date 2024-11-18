@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<university>
+    <students>
+        <student>
+            <surname>Smith</surname>
+            <dob>1969-10-26</dob>
+            <email>a.smith@tu-berlin.de</email>
+            <address>XMLstrasse</address>
+            <phone_private>34374839782</phone_private>
+        </student>
+        <student>
+             <surname>Ricardo</surname>
+             <dob>1677-03-06</dob>
+             <email>d.ricardo@tu-berlin.de</email>
+             <address>UMLstrasse</address>
+             <phone_private>3854839782</phone_private>
+         </student>
+         <student>
+             <surname>Malthus</surname>
+             <dob>1766-02-13</dob>
+             <email>t.malthus@tu-berlin.de</email>
+             <address>OCLstrasse</address>
+             <phone_job>34935329782</phone_job>
+         </student>
+     </students>
+ </university>
+
+
+             

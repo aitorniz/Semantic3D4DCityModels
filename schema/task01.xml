@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="https://www.w3.org/university">
+
+<!--Abstract type person declaration -->    
+<xsd:complexType name  = "person" abstract = "true">
+    <xsd:element name = "surname" type = "xs:string"/>
+    <xsd:element name = "dob" type = "xs:date"/>
+        <xsd:restriction base="xsd:date">
+            <xsd:maxInclusive value = "2006-01-01"/>
+        </xsd:restriction>
+    <xsd:element name = "email" type = "xs:string"/>
+    <xsd:element name = "address" type = "xs:address"/>
+    <xsd:choice>
+        <xsd:element name = "phone_private" type = "xs:string"/>
+        <xsd:element name = "phone_job" type = "xs:string"/>
+    </xsd:choice>
+</xsd:complexType>
+
+<!--Abstract type student definition -->
+<xsd:complexType name = "student" abstract = "true">
+    <xsd:extension base = "person">
+        <xsd:element name = "matriculationNO" type = "xs:positiveInteger"/>
+        <xsd:element name = "BSc" type = "xs:string"/>
+        <xsd:element name = "start" type = "xs:string"/>
+    </xsd:extension>
+</xsd:complexType> 
+
+<!--Derived type teacher -->
+<xsd:complexType name = "teacher">
+    <xsd:extension base = "person"/>
+        <xsd:element name = "office" type = "xs:string"/>
+</xsd:complexType>
+
+<!-- Element students -->
+<xsd:complexType name = "students">
+    <xsd:sequence>
+        <xsd:element name = "student" type = "student" minOccurs = "0" maxOccurs = "unbounded"/>
+    </xsd:sequence>
+</xsd:complexType>
+
+<!-- Element teachers -->
+<xsd:complexType name = "teachers">
+    <xsd:sequence>
+        <xsd:element name = "teacher" type = "teacher" minOccurs = "0" maxOccurs = "unbounded"/>
+    </xsd:sequence>
+</xsd:complexType>
+
+</xsd:schema>
